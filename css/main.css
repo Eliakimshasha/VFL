@@ -1,0 +1,1093 @@
+/* COLORS */
+/* DOMINANT COLOR:  #ff5722 */
+/* lessdominantCOLOR:  */
+body {
+  margin: 0;
+  font-family: 'Lexend Giga', serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 18px;
+  background-color: #f4f4f4; /* Light gray background */
+}
+html,
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4; /* Bright orange from the logo */
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 8px 15px rgba(255, 87, 34, 0.4); /* Orange shadow for professionalism */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-left: 50px; */
+}
+
+.navbar .logo img {
+  height: 90px;
+  margin-right: 10px;
+  padding-left: 90px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 150px;
+}
+
+.navbar .nav-links li {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #ff5722;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #ff5722; /* Orange from the logo */
+}
+
+.navbar .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 300px;
+  background: rgba(7, 7, 79, 0.8); /* Glassy transparent background */
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  /* border-radius: 4px; */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-bottom: 7px solid #ff5722;
+}
+
+.navbar .dropdown a {
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.navbar .nav-links li:hover .dropdown {
+  display: flex;
+}
+
+/* Responsive styling */
+.navbar .burger {
+  display: none;
+  height: 30px;
+  width: 40px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar .burger div {
+  background-color: #ff5722;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+}
+
+.navbar .nav-links.mobile {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffff;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar .nav-links.mobile li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.navbar .nav-links.active {
+  display: flex;
+}
+
+/* @media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar .burger {
+    display: flex;
+  }
+} */
+
+/* Carousel  */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  position: relative;
+  flex: 1;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.carousel-content {
+  position: absolute;
+  left: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+  /* border-radius: 5px; */
+  animation: bounceIn 0.8s ease;
+}
+
+.carousel-content h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.carousel-content p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.carousel-controllers {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.carousel-controllers button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: #ff5722;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.carousel-controllers button.active {
+  background-color: #ff8a50;
+}
+
+.carousel-controllers button:hover {
+  transform: scale(1.2);
+}
+
+/* @media (max-width: 768px) {
+  .carousel-content h2 {
+    font-size: 22px;
+  }
+
+  .carousel-content p {
+    font-size: 16px;
+  }
+} */
+
+/* WHO WE ARE  */
+.who-we-are {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 90%;
+}
+
+.who-we-are-left {
+  width: 60%;
+  height: 650px;
+}
+
+.who-we-are-left h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  color: rgba(7, 7, 79, 0.8);
+}
+
+.who-we-are-left h2:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: #ff5722;
+  bottom: -5px;
+  left: 0;
+}
+
+.who-we-are-left p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(7, 7, 79, 0.8);
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.who-we-are-left .cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.who-we-are-left .cta:hover {
+  background-color: #ff8a50;
+}
+
+.who-we-are-right {
+  width: 40%;
+  position: relative;
+  height: 650px;
+}
+
+.who-we-are-right img {
+  width: 100%;
+  height: 650px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.who-we-are-right .watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* @media (max-width: 768px) {
+  .who-we-are {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .who-we-are-left,
+  .who-we-are-right {
+    width: 100%;
+  }
+
+  .who-we-are-right {
+    margin-top: 20px;
+  }
+} */
+
+/* what we do styling */
+.what-we-do {
+  padding: 50px;
+
+  text-align: center;
+}
+
+.what-we-do h2 {
+  font-size: 28px;
+  color: rgba(7, 7, 79, 0.8);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 75%;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* Ensures smooth transitions */
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 20px;
+  width: 280px; /* Ensures three cards fit perfectly */
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.card a:hover {
+  background: #ff8a50;
+}
+
+/* Navigation buttons */
+.slider-buttons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slider-buttons button {
+  background: #ff5722;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-buttons button:hover {
+  background: #ff8a50;
+  transform: scale(1.1);
+}
+
+/* banner Section  */
+/* Banner Styling */
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.stat-box {
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* padding: 30px; */
+  /* border-radius: 15px; */
+  color: white;
+  /* transition: transform 0.3s ease; */
+}
+
+.stat-box:hover {
+  transform: scale(1.1);
+}
+
+/* Icons */
+.stat-box i {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.stats-banner {
+  width: 100%;
+  height: fit-content;
+  padding: 30px 0;
+  background: #ff5722; /* Dropdown color from navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Counter Numbers */
+.counter {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Description Text */
+.stat-box p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+} */
+
+/* TESTIMONIALS  */
+/* Testimonial Slider Section */
+.testimonial-slider-section {
+  width: 100%;
+  text-align: center;
+  padding: 50px 20px;
+  background: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Watermark */
+.watermark {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.1); /* Light watermark */
+  z-index: 1;
+}
+
+/* Heading */
+.testimonial-slider-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(7, 7, 79, 0.8);
+  margin-bottom: 30px;
+}
+
+/* Slider Container */
+.testimonial-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Slider Wrapper */
+.testimonial-slider {
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1200px;
+  scroll-behavior: smooth;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  flex: 0 0 33.33%;
+  text-align: center;
+}
+
+/* Profile Picture - Square Circles */
+.testimonial-profile {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 15px;
+}
+
+.testimonial-profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #ff5722; /* Less dominant color */
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Social Icons (Hidden by Default) */
+.testimonial-social-icons {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  color: #ff5722;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-social-icons a {
+  color: white;
+  background: #ff5722;
+  text-decoration: none;
+  padding: 8px;
+  /* border-radius: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  transition: background 0.3s ease;
+}
+
+.testimonial-social-icons a:hover {
+  background: #444;
+}
+
+/* Show Icons on Hover */
+.testimonial-profile:hover .testimonial-social-icons {
+  opacity: 1;
+}
+
+.testimonial-profile:hover img {
+  opacity: 0.3;
+}
+
+/* Name & Testimonial Text */
+.testimonial-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ff5722;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  color: rgba(7, 7, 79, 0.8);
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* Slider Controls */
+.slider-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #666;
+  transition: transform 0.2s ease-in-out;
+}
+
+.left-btn {
+  position: absolute;
+  left: 5%;
+}
+
+.right-btn {
+  position: absolute;
+  right: 5%;
+}
+
+.slider-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+  .testimonial-slider {
+    width: 100%;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+} */
+
+/* GOOGLE MAP  */
+/* Full-width Map Section */
+.map-section {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height if needed */
+  overflow: hidden; /* Prevents extra scrolling */
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  filter: brightness(0.8) contrast(1.2) opacity(0.9); /* Overlay effect */
+}
+
+/* Visitor Counter */
+.visitor-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background: #ff5722;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  .map-section {
+    height: 350px;
+  }
+
+  .visitor-counter {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+} */
+
+/* FOOTER AREA  */
+/* Footer Section */
+.footer-section {
+  width: 100%;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  /* gap: 10px; */
+}
+
+/* VFL Logo and About */
+.footer-left {
+  flex: 1;
+  max-width: 300px;
+  padding-left: 30px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Footer Links */
+.footer-links {
+  flex: 1;
+  max-width: 300px;
+  padding-left: 80px;
+  padding-right: 30px;
+}
+
+.footer-links h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff5722;
+}
+
+/* Partner Registration Form */
+.footer-form {
+  flex: 1;
+  max-width: 300px;
+  padding-right: 70px;
+}
+
+.footer-form h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-form input {
+  width: 92%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  /* border-radius: 5px; */
+}
+
+.footer-form button {
+  width: 99%;
+  padding: 10px;
+  background: #ff5722;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  /* border-radius: 5px; */
+  transition: background 0.3s ease;
+}
+
+.footer-form button:hover {
+  background: #e64a19;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  padding: 0 !important;
+}
+
+.footer-bottom a {
+  color: #ff5722;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: none;
+}
+
+/* VFL Watermark */
+.footer-watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.1;
+}
+
+.footer-watermark img {
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* padding: 0.5rem 1rem; */
+  }
+  .navbar .logo img {
+    height: 60px;
+    padding-left: 10px;
+  }
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    padding-left: 0;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+  }
+  .navbar .nav-links.active {
+    display: flex;
+  }
+  .navbar .burger {
+    display: flex;
+    width: 12%;
+    justify-content: end;
+    padding-right: 20px;
+  }
+  .nav-links li {
+    margin: 10px 0;
+    margin-left: 0 !important;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Carousel adjustments */
+  .carousel {
+    height: 400px;
+  }
+  .carousel-content {
+    left: 10px;
+    padding: 10px;
+  }
+  .carousel-content h2 {
+    font-size: 20px;
+  }
+  .carousel-content p {
+    font-size: 14px;
+  }
+
+  /* Who We Are section */
+  .who-we-are {
+    flex-direction: column;
+    text-align: center;
+  }
+  .who-we-are-left,
+  .who-we-are-right {
+    width: 100%;
+  }
+  .who-we-are-left {
+    height: fit-content;
+    width: 100%;
+
+    padding-bottom: 30px;
+  }
+
+  .who-we-are-left h2 {
+    font-size: 32px;
+    font-weight: bold;
+    width: 100%;
+    text-align: start;
+
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    color: rgba(7, 7, 79, 0.8);
+  }
+
+  .who-we-are-left h2:after {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 4px;
+    background-color: #ff5722;
+    bottom: -5px;
+    left: 0;
+  }
+
+  .who-we-are-left p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: start;
+    color: rgba(7, 7, 79, 0.8);
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+  .who-we-are-right {
+    width: 100%;
+    position: relative;
+    height: fit-content;
+  }
+
+  .who-we-are-right img {
+    width: 100%;
+    height: 650px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .who-we-are-right img {
+    height: auto;
+  }
+
+  /* What We Do section */
+  .slider-container {
+    max-width: 100%;
+  }
+  .card {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  /* Banner section */
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stats-banner {
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0;
+    background: #ff5722; /* Dropdown color from navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Testimonial section */
+  .testimonial-slider {
+    width: 100%;
+  }
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+
+  /* Footer adjustments */
+  .footer-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 !important;
+  }
+  .footer-left,
+  .footer-links,
+  .footer-contact {
+    max-width: 100%;
+    padding: 10px 0;
+    margin: 0 !important;
+  }
+  .footer-logo {
+    width: 100px;
+    margin-bottom: 0;
+  }
+
+  .what-we-do {
+    padding: 10px;
+    height: 900px;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .what-we-do h2 {
+    font-size: 28px;
+    color: rgba(7, 7, 79, 0.8);
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    width: 280px;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .testimonial-slider-section {
+    padding: 50px 0;
+  }
+  .testimonial-slider-section h2 {
+    font-size: 27px;
+    font-weight: bold;
+    color: rgba(7, 7, 79, 0.8);
+    margin-bottom: 30px;
+  }
+
+  .slider-buttons {
+    display: none;
+  }
+
+  .slider-buttons button {
+    background: #ff5722;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .footer-form {
+    flex: 1;
+    max-width: 300px;
+    margin: auto;
+    padding-right: 0;
+  }
+
+  .naleng {
+    font-size: 12px !important;
+  }
+}
