@@ -1,0 +1,409 @@
+/* Breadcrumb Section */
+.breadcrumb-section {
+  width: 100%;
+  height: 60vh;
+  background: url("../images/3.JPG") no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay Effect */
+.breadcrumb-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  top: 0;
+  left: 0;
+}
+
+/* Breadcrumb Content */
+.breadcrumb-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Breadcrumb Links */
+.breadcrumb-content a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.breadcrumb-content a:hover {
+  color: #ff5722;
+}
+
+/* Active Link */
+.breadcrumb-content a.active {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .breadcrumb-content {
+    font-size: 14px;
+  }
+}
+
+/* Start of About us Section  */
+.about-section {
+  height: 500px; /* Set fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 10%;
+  background: #f8f8f8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adjust left content (text) */
+.about-left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-left h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff5722;
+  padding-bottom: 10px;
+}
+.about-heading {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.about-heading::after {
+  content: "";
+  width: 50%; /* Half-width underline */
+  height: 4px;
+  background-color: #ff5722; /* Adjust color */
+  position: absolute;
+  left: 0%; /* Centering the half line */
+  bottom: 0;
+  height: 8px;
+}
+
+.about-left h3 {
+  font-size: 40px;
+  color: rgba(7, 7, 79, 0.8);
+  margin-bottom: 15px;
+}
+
+.about-left p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 200;
+}
+.program-description {
+  font-size: 20px !important;
+  color: #000; /* Adapted from About section */
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+/* Right Image with Animation */
+.about-right {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+}
+
+.about-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0.9;
+  animation: waveEffect 5s infinite ease-in-out;
+}
+
+/* Watermark */
+.about-right::after {
+  content: "";
+  background: url("images/logo.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Animation for wave effect */
+@keyframes waveEffect {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Scroll Popup Effect */
+.about-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-heading{
+    font-size: 22px !important;
+  }
+  .about-section {
+   
+    padding: 40px 10px;
+    background: #f8f8f8;
+   
+  }
+  .about-heading::after {
+    content: "";
+    width: 40%; /* Half-width underline */
+    height: 4px;
+    background-color: #ff5722; /* Adjust color */
+    position: absolute;
+    left: 28%; /* Centering the half line */
+    bottom: 0;
+  }
+  .about-section {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+ 
+ 
+
+  .about-left,
+  .about-right {
+    max-width: 100%;
+  }
+
+ 
+}
+
+/* Programs area  */
+.programs-section {
+  text-align: center;
+  padding:50px;
+  margin-bottom: 80px;
+  background: #f8f8f8;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ff5722; /* Adapted color from About section */
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: "";
+  width: 50%;
+  height: 4px;
+  background-color: #ff5722;
+  position: absolute;
+  left: 0%;
+  height: 8px;
+  bottom: 0;
+}
+
+.programs-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.program-card {
+  flex: 1;
+  background: white;
+  border-radius: 0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.program-card img {
+  width: 100%;
+  border-radius: 0;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.program-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ff5722; /* Adapted from About section */
+}
+
+.program-description {
+  font-size: 16px;
+  color: #000; /* Adapted from About section */
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+/* Hover Effect - Flip Effect */
+.program-card:hover {
+  transform: rotateY(18deg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.program-card:hover:active {
+  transform: rotateY(0);
+}
+/* End of programs area  */
+
+/* Our Partners Section  */
+/* I am Lemmy Lucian , IT Specialist and WEB Developer.*/
+.partners-section {
+  text-align: center;
+  padding: 50px;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.partners-slider {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.partners-track {
+  display: flex;
+  gap: 30px;
+  animation: slide 10s linear infinite;
+}
+
+.partners-track img {
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.partners-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Scroll to Top Button  */
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-top:hover {
+  background: #e64a19;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff5722; /* Adapted color from About section */
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  .about-left h3 {
+    font-size: 20px;
+    color: rgba(7, 7, 79, 0.8);
+    margin-bottom: 15px;
+  }
+  
+  .about-left p {
+    font-size:16px;
+    line-height: 1.6;
+    color: #000;
+    font-weight: 200;
+  }
+  
+  .section-title::after {
+    content: "";
+    width: 40%;
+    height: 4px;
+    background-color: #ff5722;
+    position: absolute;
+    left: 28%;
+    height: 4px;
+    bottom: 0;
+  }
+  .programs-section {
+    text-align: center;
+    margin-bottom: 0;
+    padding:50px 10px;
+    background: #f8f8f8;
+  }
+  .program-card {
+    width: 100% !important;
+    flex: auto;
+    background: white;
+    border-radius: 0;
+    padding: 0px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: none !important;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
+  .program-description{
+    font-size: 16px !important;
+  }
+}

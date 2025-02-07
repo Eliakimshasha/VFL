@@ -32,20 +32,20 @@
         <img src="images/logo.png" alt="Logo" />
       </div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li>
           <a href="#">What We Do</a>
           <div class="dropdown">
-            <a href="#">SRHR Education</a>
-            <a href="#">Youth Empowerment</a>
-            <a href="#">Gender Advocacy</a>
-            <a href="#">Social Empowerment</a>
-            <a href="#">Poverty Alleviation</a>
+            <a href="programs.html">SRHR Education</a>
+            <a href="youth.html">Youth Empowerment</a>
+            <a href="gender.html">Gender Advocacy</a>
+            <a href="social.html">Social Empowerment</a>
+            <a href="poverty.html">Poverty Alleviation</a>
           </div>
         </li>
-        <li><a href="#">Our Projects</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="photo-gallery.html">Our Gallery</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
       </ul>
       <div class="burger">
         <div></div>
@@ -55,7 +55,7 @@
     </nav>
 
     <!-- Hero section  -->
-    <div class="carousel">
+    <div class="carousel" id="home">
       <div class="carousel-slide" id="carousel-slide">
         <div class="carousel-item">
           <div class="carousel-overlay"></div>
@@ -92,7 +92,7 @@
     <!-- End of carousel  -->
 
     <!-- START OF WHO WE ARE -->
-    <div class="who-we-are">
+    <div class="who-we-are" id="aboutt">
       <div class="who-we-are-left">
         <h2>Who We Are</h2>
         <p>
@@ -125,7 +125,7 @@
     <!-- END WHO WE ARE  -->
 
     <!-- Start Card --what we do  -->
-    <section class="what-we-do">
+    <section class="what-we-do" id="whatwedo">
       <h2>What We Do</h2>
       <div class="slider-container">
         <div class="slider" id="slider">
@@ -335,13 +335,13 @@
       </div>
 
       <!-- What We Do -->
-      <div class="footer-links">
+      <div class="footer-links" id="contact">
         <h3>What We Do</h3>
         <ul>
-          <li><a href="#">Youth Empowerment</a></li>
-          <li><a href="#">Community Support</a></li>
-          <li><a href="#">Education Initiatives</a></li>
-          <li><a href="#">Health Awareness</a></li>
+          <li><a href="youth.html">Youth Empowerment</a></li>
+          <li><a href="gender.html">Gender Advocacy</a></li>
+          <li><a href="social.html">Social Empowerment</a></li>
+          <li><a href="poverty.html">Poverty Alleviation</a></li>
         </ul>
       </div>
 
@@ -358,6 +358,26 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+            width: fit-content;
+          "
+        >
+          <div  style="background-color: white; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+            <a href="https://www.instagram.com/visioningforfuturelife">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div style="background-color: white; z-index: 999; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%;">
+            <a href="https://www.linkedin.com/in/visioningforfuturelife-vfl-84575634b">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
         <p>
           &copy; <span id="year"></span> All Rights Reserved - Vision for Future
           Life, VFL.
@@ -376,22 +396,24 @@
 
     <!-- END OF FOOTER SECTION  -->
     <script>
-      const burger = document.querySelector(".burger");
-      const navLinks = document.querySelector(".nav-links");
+      const burger = document.querySelector('.burger');
+      const navLinks = document.querySelector('.nav-links');
 
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
       });
-
+      navLinks.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
       //   Carousel
-      const slide = document.getElementById("carousel-slide");
-      const buttons = document.querySelectorAll(".carousel-controllers button");
+      const slide = document.getElementById('carousel-slide');
+      const buttons = document.querySelectorAll('.carousel-controllers button');
 
       let currentIndex = 0;
 
       function updateSlide() {
         buttons.forEach((button, index) => {
-          button.classList.toggle("active", index === currentIndex);
+          button.classList.toggle('active', index === currentIndex);
         });
         slide.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
@@ -402,7 +424,7 @@
       }
 
       buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
+        button.addEventListener('click', () => {
           currentIndex = index;
           updateSlide();
         });
@@ -412,10 +434,10 @@
 
       // Cards
       let index = 0;
-      const slider = document.getElementById("slider");
+      const slider = document.getElementById('slider');
       const cardWidth = 300; // Width of each card
       const visibleCards = 3; // Number of cards visible
-      const totalCards = document.querySelectorAll(".card").length;
+      const totalCards = document.querySelectorAll('.card').length;
       const maxIndex = Math.ceil(totalCards / visibleCards) - 1;
 
       function updateSlidePosition() {
